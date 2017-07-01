@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, Input, Dropdown } from 'semantic-ui-react'
+import { Menu, Input, Dropdown } from 'semantic-ui-react';
+import { setNavbar} from '../actions/navbar';
+import { connect } from 'react-redux';
 
 // CSS
 import './NavBar.css'
@@ -8,7 +10,10 @@ import './NavBar.css'
 class NavBar extends Component {
   state = { activeItem: 'home' }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick = (e, {name}) => {
+    setNavbar(name, this.props.dispatch)
+    this.setState({ activeItem: name })
+  }
 
   render(){
     const { activeItem } = this.state
@@ -20,9 +25,9 @@ class NavBar extends Component {
         <Menu.Item name='local' active={activeItem === 'local'} onClick={this.handleItemClick} />
           <Dropdown item text='Maps'>
             <Dropdown.Menu>
-              <Dropdown.Item>Barometric</Dropdown.Item>
-              <Dropdown.Item>Radar</Dropdown.Item>
-              <Dropdown.Item>Regional Satallite</Dropdown.Item>
+              <Dropdown.Item name='barometric' onClick={this.handleItemClick}>Barometric</Dropdown.Item>
+              <Dropdown.Item name='radar' onClick={this.handleItemClick}>Radar</Dropdown.Item>
+              <Dropdown.Item name='satallite' onClick={this.handleItemClick}>Regional Satallite</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         <Menu.Item position='right' className='nb-border-right'>
@@ -38,4 +43,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar
+export default connect()(NavBar);
