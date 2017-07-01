@@ -27,7 +27,7 @@ class WeatherStation extends Component {
         case 'historical':
           return <Compare />
         default:
-          return <h1>Hello</h1>
+          return <h1>Component has not been made yet</h1>
     }
 
   }
