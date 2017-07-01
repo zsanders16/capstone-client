@@ -8,8 +8,8 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom'
 
 // Redux
+import store from './store'
 import { Provider } from 'react-redux'
-import { store } from './store'
 
 // CSS files
 import 'semantic-ui-css/semantic.min.css'
