@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Grid, Segment } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import CurrentConditions from './CurrentConditions';
 import Compare from './Compare';
+import Favorites from './Favorites'
 
 class WeatherStation extends Component {
 
@@ -12,9 +13,7 @@ class WeatherStation extends Component {
         <CurrentConditions />
       </Grid.Column>
       <Grid.Column width={4} className='ws_area'>
-        <Segment>
-          Command Central
-        </Segment>
+        <Favorites />
       </Grid.Column>
     </Grid.Row>
   )
