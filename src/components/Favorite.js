@@ -5,7 +5,7 @@ class Favorite extends Component {
 
   render(){
     return (
-      <Segment basic fluid>
+      <Segment basic >
         {this.props.favorite}
       </Segment>
     )
