@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import { Segment } from 'semantic-ui-react'
 
 class Favorite extends Component {
 
   render(){
     return (
-      <div>NewFavorite</div>
+      <Segment basic fluid>
+        {this.props.favorite}
+      </Segment>
     )
   }
 }
