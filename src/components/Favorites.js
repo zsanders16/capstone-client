@@ -13,6 +13,7 @@ class Favorites extends Component {
     if( this.props.favorites ) {
       this.setState({ ...this.props.favorites
       })
+    }
     if( favorites.length <= 0) {
       // Set initial Favorites
       dispatch(favoritesIndex())
@@ -22,10 +23,11 @@ class Favorites extends Component {
   displayFavorites = () => {
     let { favorites } = this.props
     if( favorites.length > 0 ){
-      return favorites.map( ( loc ) => {
-        return ( <Favorite {...fav} /> )
+      // return favorites.map( ( loc ) => {
+      //   return ( <Favorite {...favorites} /> )
+      // })
       return favorites.map( ( fav, i ) => {
-        return ( <Favorite key={i} favorite={fav} /> )
+        return ( <Favorite key={i} favorite={favorites} /> )
       })
     } else {
       return (
@@ -47,7 +49,7 @@ class Favorites extends Component {
       <Grid>
         <Grid.Row>
           <Grid.Column>
-            <Segment className='fav-scroll'>
+            <Segment raised className='fav-scroll'>
               { this.displayFavorites() }
             </Segment>
           </Grid.Column>

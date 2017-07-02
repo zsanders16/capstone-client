@@ -29,7 +29,7 @@ class CurrentConditions extends Component {
   }
   render(){
     return (
-      <Segment id='current_conditions' className='cc-container'>
+      <Segment raised id='current_conditions' className='cc-container'>
         <ReactHighcharts config={ this.chart } />
       </Segment>
     )
